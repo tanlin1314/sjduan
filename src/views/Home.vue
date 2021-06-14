@@ -1,18 +1,44 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div >
+      <div class="home">图片</div>
+      <div class="indexBt">
+         <router-link to="/" class="a">商品</router-link>
+          <router-link to="/evaluate">评价</router-link>
+          <router-link to="/business">商家</router-link>
+      </div>
+      <router-view/>
+      <!-- 购物车 -->
+      
+<div><ShoppingCart /></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ShoppingCart from './ShoppingCart'
+  export default {
+    components:{
+      ShoppingCart
+    },
+    methods:{
+    
+    }
+  }
+</script>
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+<style lang="less" scoped>
+.home{
+  width: 100%;
+  height: 150px;
+  background: aqua;
+}
+.indexBt{
+  display: flex;
+  justify-content: space-around;
+  a{
+    text-decoration:none
   }
 }
-</script>
+
+
+
+</style>
